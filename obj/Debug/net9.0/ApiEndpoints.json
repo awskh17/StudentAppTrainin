@@ -1,5 +1,67 @@
 [
   {
+    "ContainingType": "StudentApp.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "Account",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentApp.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "StudentApp.Security.RegisterViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentApp.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "Account",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentApp.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "StudentApp.Security.LoginViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentApp.Controllers.AccountController",
+    "Method": "Logout",
+    "RelativePath": "Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "StudentApp.Controllers.StudentController",
     "Method": "AddAsync",
     "RelativePath": "Student",
