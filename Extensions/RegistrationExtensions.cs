@@ -7,10 +7,35 @@ namespace StudentApp.Extensions;
 public static class RegistrationExtensions
 {
     public static IServiceCollection RegisterSwagger(this IServiceCollection services)
-        => services.AddSwaggerGen(options =>
-        {
-            options.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
-        });
+        => services.AddSwaggerGen(
+            o =>
+            {
+                o.SwaggerDoc("v1", new OpenApiInfo() { Title = "Your API", Version = "v1" });
+                o.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter a valid token",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    BearerFormat = "JWT",
+                    Scheme = "Bearer"
+                });
+
+                o.AddSecurityRequirement(new OpenApiSecurityRequirement
+              {
+                  {
+                      new OpenApiSecurityScheme
+                      {
+                          Reference = new OpenApiReference
+                          {
+                              Type = ReferenceType.SecurityScheme,
+                              Id = "Bearer"
+                          }
+                      },
+                      Array.Empty<string>()
+                  }
+            });
+            });
 
 
     public static IServiceCollection RegisterDatabase(this IServiceCollection services,IConfiguration configuration)
